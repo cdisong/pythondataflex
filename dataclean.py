@@ -1,6 +1,15 @@
 import pandas as pd 
 
 
+jan2017 = "/Users/christine/Desktop/flights/2017/jan2017.csv"
+feb2017 = "/Users/christine/Desktop/flights/2017/feb2017.csv"
+mar2017 = "/Users/christine/Desktop/flights/2017/mar2017.csv"
+apr2017 = "/Users/christine/Desktop/flights/2017/apr2017.csv"
+may2017 = "/Users/christine/Desktop/flights/2017/may2017.csv"
+jun2017 = "/Users/christine/Desktop/flights/2017/jun2017.csv"
+jul2017 = "/Users/christine/Desktop/flights/2017/jul2017.csv"
+aug2017 = "/Users/christine/Desktop/flights/2017/aug2017.csv"
+sep2017 = "/Users/christine/Desktop/flights/2017/sep2017.csv"
 
 
 database = pd.read_csv(jan2017, low_memory=False)
