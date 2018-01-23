@@ -19,6 +19,20 @@ mv airline.csv /Desktop
 
 
 
+######
+https://en.wikipedia.org/wiki/List_of_airports_in_the_United_States
+
+from bs4 import BeautifulSoup
+from urllib.request import Request, urlopen
+
+site= "https://en.wikipedia.org/wiki/List_of_airports_in_the_United_States"
+hdr = {'User-Agent': 'Mozilla/5.0'}
+req = Request(site,headers=hdr)
+page = urlopen(req)
+soup = BeautifulSoup(page, "lxml")
+print(soup)
+
+
 # from bs4 import BeautifulSoup
 # import urllib2
 # wiki = "http://en.wikipedia.org/wiki/List_of_postcode_districts_in_the_United_Kingdom"
