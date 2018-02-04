@@ -14,4 +14,7 @@ from sklearn.preprocessing import PolynomialFeatures, StandardScaler
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.model_selection import train_test_split, cross_val_score, cross_val_predict
 from scipy.optimize import curve_fit
+plt.rcParams["patch.force_edgecolor"] = True
+plt.style.use('fivethirtyeight')
+mpl.rc('patch', edgecolor = 'dimgray', linewidth=1)
 
