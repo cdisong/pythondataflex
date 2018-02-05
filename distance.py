@@ -47,26 +47,3 @@ k = k.reset_index(drop=True)
 l = pd.read_csv(dec2016, low_memory=False) 
 l = l.reset_index(drop=True) 
 
-distance = pd.concat([a, b, c, d, e, f, g, h, i, j, k, l], axis=0, ignore_index=True)
-
-columns = ['ORIGIN', 'DEST', 'DISTANCE']
-distance = distance[columns]
-
-distance['DISTANCE'] = distance['DISTANCE'].astype(int)
-# finalcolumn= finalcolumn.astype(int)
-
-# distance = pd.DataFrame({'Year': ['2014', '2015'], 'quarter': ['q1', 'q2']})
-distance['JOURNEY'] = distance[['ORIGIN', 'DEST']].apply(lambda x: ''.join(x), axis=1)
-
-columns = ['JOURNEY', 'DISTANCE']
-
-distance = distance[columns]
-distance = distance.drop_duplicates(keep='first')
-
-# j = pd.read_csv(j, low_memory=False)
-
-# columns = ['ORIGIN', 'DEST', 'DISTANCE']
-# j = j['columns']
-
-# j = j.drop_duplicated(keep='first')
-# j.shape 
