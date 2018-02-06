@@ -92,7 +92,20 @@ print(classification_report(Y_validation, predictions))
 #   warnings.warn("Variables are collinear.")
 # /Users/christine/anaconda3/lib/python3.6/site-packages/sklearn/discriminant_analysis.py:388: UserWarning: Variables are collinear.
 #   warnings.warn("Variables are collinear.")
-
+# /Users/christine/anaconda3/lib/python3.6/site-packages/sklearn/discriminant_analysis.py:388: UserWarning: Variables are collinear.
+#   warnings.warn("Variables are collinear.")
+# /Users/christine/anaconda3/lib/python3.6/site-packages/sklearn/discriminant_analysis.py:388: UserWarning: Variables are collinear.
+#   warnings.warn("Variables are collinear.")
+# /Users/christine/anaconda3/lib/python3.6/site-packages/sklearn/discriminant_analysis.py:388: UserWarning: Variables are collinear.
+#   warnings.warn("Variables are collinear.")
+# /Users/christine/anaconda3/lib/python3.6/site-packages/sklearn/discriminant_analysis.py:388: UserWarning: Variables are collinear.
+#   warnings.warn("Variables are collinear.")
+# /Users/christine/anaconda3/lib/python3.6/site-packages/sklearn/discriminant_analysis.py:388: UserWarning: Variables are collinear.
+#   warnings.warn("Variables are collinear.")
+# LDA: 0.635191 (0.002719)
+# KNN: 0.596370 (0.002657)
+# CART: 0.642621 (0.003097)
+# NB: 0.634338 (0.002740)   
 
 
 
