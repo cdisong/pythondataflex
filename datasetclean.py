@@ -17,4 +17,9 @@ from scipy.optimize import curve_fit
 plt.rcParams["patch.force_edgecolor"] = True
 plt.style.use('fivethirtyeight')
 mpl.rc('patch', edgecolor = 'dimgray', linewidth=1)
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = "last_expr"
+pd.options.display.max_columns = 50
+%matplotlib inline
+warnings.filterwarnings("ignore")
 
