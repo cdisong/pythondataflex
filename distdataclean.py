@@ -11,17 +11,6 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
-ffj2017 = "/Users/christine/Desktop/python/jan2017.csv"
-# f2017 = "/Users/christine/Desktop/python/dffeb2017.csv"
-
-db = pd.read_csv(j2017, low_memory=False)
-# de = pd.read_csv(f2017, low_memory=False)
-
-a = db['ARR_DELAY_NEW']
-# a = a.clip(upper=2)
-# a = a.clip(lower=1) 
-# a = a.fillna(1).astype(int)
-
 
 a = a.fillna(0).astype(int)
 idx = 0
