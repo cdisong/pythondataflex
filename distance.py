@@ -1,4 +1,16 @@
-/christine/Desktop/distance/dec.csv"
+import pandas as pd 
+jan2016 = "/Users/christine/Desktop/distance/jan.csv"
+feb2016 = "/Users/christine/Desktop/distance/feb.csv"
+mar2016 = "/Users/christine/Desktop/distance/mar.csv"
+apr2016 = "/Users/christine/Desktop/distance/apr.csv"
+may2016 = "/Users/christine/Desktop/distance/may.csv"
+jun2016 = "/Users/christine/Desktop/distance/jun.csv"
+jul2016 = "/Users/christine/Desktop/distance/jul.csv"
+aug2016 = "/Users/christine/Desktop/distance/aug.csv"
+sep2016 = "/Users/christine/Desktop/distance/sep.csv"
+oct2016 = "/Users/christine/Desktop/distance/oct.csv"
+nov2016 = "/Users/christine/Desktop/distance/nov.csv"
+dec2016 = "/Users/christine/Desktop/distance/dec.csv"
 
 
 a = pd.read_csv(jan2016, low_memory=False) 
