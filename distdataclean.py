@@ -11,19 +11,17 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
+ffj2017 = "/Users/christine/Desktop/python/jan2017.csv"
+# f2017 = "/Users/christine/Desktop/python/dffeb2017.csv"
 
-a = a.fillna(0).astype(int)
-idx = 0
-for val in np.nditer(a):
-	if val <= 15 and val>0:
-		a[idx] = 15
-	if val<=30 and val>15:
-		a[idx] = 30
-	if val<=45 and val>30:
-		a[idx] = 45
-	if val>45:
-		a[idx] = 46
-	idx = idx+1
+db = pd.read_csv(j2017, low_memory=False)
+# de = pd.read_csv(f2017, low_memory=False)
+
+a = db['ARR_DELAY_NEW']
+# a = a.clip(upper=2)
+# a = a.clip(lower=1) 
+# a = a.fillna(1).astype(int)
+
 
 
 keep_col = ['MONTH', 'AIRLINE_ID', 'ORIGIN_AIRPORT_ID', 'DEST_AIRPORT_ID', 'DISTANCE']
