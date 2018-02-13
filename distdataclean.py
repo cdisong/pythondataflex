@@ -23,41 +23,18 @@ a = db['ARR_DELAY_NEW']
 # a = a.fillna(1).astype(int)
 
 
-
-keep_col = ['MONTH', 'AIRLINE_ID', 'ORIGIN_AIRPORT_ID', 'DEST_AIRPORT_ID', 'DISTANCE']
-d = db[keep_col]
-ab = pd.concat([d,a], axis=1)
-ab['DISTANCE'] = ab['DISTANCE'].astype(int)
-ab['ARR_DELAY_NEW'] = ab['ARR_DELAY_NEW'].astype(int)
-
-array = ab.values     
-X = array[:,0:5]
-Y = array[:,5] 
-validation_size = 0.20
-seed = 7
-X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
-
-models = []
-models.append(('LR', LogisticRegression()))
-models.append(('LDA', LinearDiscriminantAnalysis()))
-models.append(('KNN', KNeighborsClassifier()))
-models.append(('CART', DecisionTreeClassifier()))
-models.append(('NB', GaussianNB()))
-models.append(('SVM', SVC()))
-results = []
-names = ['MONTH', 'AIRLINE_ID', 'ORIGIN_AIRPORT_ID', 'DEST_AIRPORT_ID', 'DISTANCE', 'ARR_DELAY_NEW']
-seed = 7
-scoring = 'accuracy'
-
-for name, model in models:
-    kfold = model_selection.KFold(n_splits=10, random_state=seed)
-	cv_results = model_selection.cross_val_score(model, X_train, Y_train, cv=kfold, scoring=scoring)
-	results.append(cv_results)
-	names.append(name)
-	msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
-	print(msg)
-
-
+a = a.fillna(0).astype(int)
+idx = 0
+for val in np.nditer(a):
+	if val <= 15 and val>0:
+		a[idx] = 15
+	if val<=30 and val>15:
+		a[idx] = 30
+	if val<=45 and val>30:
+		a[idx] = 45
+	if val>45:
+		a[idx] = 46
+	idx = idx+1
 
 lr = LogisticRegression() 
 lr.fit(X_train, Y_train) 
