@@ -36,6 +36,14 @@ for val in np.nditer(a):
 		a[idx] = 46
 	idx = idx+1
 
+
+keep_col = ['MONTH', 'AIRLINE_ID', 'ORIGIN_AIRPORT_ID', 'DEST_AIRPORT_ID', 'DISTANCE']
+d = db[keep_col]
+ab = pd.concat([d,a], axis=1)
+ab['DISTANCE'] = ab['DISTANCE'].astype(int)
+ab['ARR_DELAY_NEW'] = ab['ARR_DELAY_NEW'].astype(int)
+
+
 lr = LogisticRegression() 
 lr.fit(X_train, Y_train) 
 predictions = lr.predict(X_validation)
