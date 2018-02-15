@@ -43,6 +43,14 @@ ab = pd.concat([d,a], axis=1)
 ab['DISTANCE'] = ab['DISTANCE'].astype(int)
 ab['ARR_DELAY_NEW'] = ab['ARR_DELAY_NEW'].astype(int)
 
+array = ab.values     
+X = array[:,0:5]
+Y = array[:,5] 
+validation_size = 0.20
+seed = 7
+X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
+
+
 
 lr = LogisticRegression() 
 lr.fit(X_train, Y_train) 
