@@ -62,6 +62,15 @@ names = ['MONTH', 'AIRLINE_ID', 'ORIGIN_AIRPORT_ID', 'DEST_AIRPORT_ID', 'DISTANC
 seed = 7
 scoring = 'accuracy'
 
+for name, model in models:
+    kfold = model_selection.KFold(n_splits=10, random_state=seed)
+	cv_results = model_selection.cross_val_score(model, X_train, Y_train, cv=kfold, scoring=scoring)
+	results.append(cv_results)
+	names.append(name)
+	msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
+	print(msg)
+
+
 
 lr = LogisticRegression() 
 lr.fit(X_train, Y_train) 
