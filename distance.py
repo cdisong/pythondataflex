@@ -13,6 +13,9 @@ nov2016 = "/Users/christine/Desktop/distance/nov.csv"
 dec2016 = "/Users/christine/Desktop/distance/dec.csv"
 
 
+a = pd.read_csv(jan2016, low_memory=False) 
+b = pd.read_csv(feb2016, low_memory=False)
+b = b.reset_index(drop=True) 
 
 c = pd.read_csv(mar2016, low_memory=False) 
 c = c.reset_index(drop=True) 
