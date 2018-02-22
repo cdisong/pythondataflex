@@ -72,6 +72,12 @@ for name, model in models:
 
 
 
+lr = LogisticRegression() 
+lr.fit(X_train, Y_train) 
+predictions = lr.predict(X_validation)
+
+
+
 # LR: 0.635191 (0.002719)
 # /Users/christine/anaconda3/lib/python3.6/site-packages/sklearn/discriminant_analysis.py:388: UserWarning: Variables are collinear.
 #   warnings.warn("Variables are collinear.")
