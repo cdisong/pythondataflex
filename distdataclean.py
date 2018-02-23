@@ -76,7 +76,12 @@ lr = LogisticRegression()
 lr.fit(X_train, Y_train) 
 predictions = lr.predict(X_validation)
 
-
+cart = DecisionTreeClassifier()
+cart.fit(X_train, Y_train)
+predictions = cart.predict(X_validation)
+print(accuracy_score(Y_validation, predictions))
+print(confusion_matrix(Y_validation, predictions))
+print(classification_report(Y_validation, predictions))
 
 # LR: 0.635191 (0.002719)
 # /Users/christine/anaconda3/lib/python3.6/site-packages/sklearn/discriminant_analysis.py:388: UserWarning: Variables are collinear.
