@@ -111,12 +111,12 @@ print(classification_report(Y_validation, predictions))
 
 
 
-e = de[keep_col]
-a = d.head(50)
-b = e.head(50)
-b = b.reset_index(drop=True)
-t = pd.concat([a,b], axis = 0, ignore_index=True)
-scatter_matrix(t)
-plt.show()
+# e = de[keep_col]
+# a = d.head(50)
+# b = e.head(50)
+# b = b.reset_index(drop=True)
+# t = pd.concat([a,b], axis = 0, ignore_index=True)
+# scatter_matrix(t)
+# plt.show()
 
 
